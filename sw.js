@@ -5,9 +5,7 @@ const FONT_CSS = "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;70
 self.addEventListener("install", e => {
   e.waitUntil((async () => {
     const c = await caches.open(CACHE);
-    // App files: cached one by one so a single failure can't break the install.
     await Promise.all(CORE.map(u => c.add(u).catch(() => {})));
-    // Fonts: best effort, cache the stylesheet and every font file it points to.
     try {
       const r = await fetch(FONT_CSS);
       const css = await r.clone().text();
@@ -26,7 +24,6 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const req = e.request;
   if (req.method !== "GET") return;
-  // Page loads: always serve the cached app shell when offline.
   if (req.mode === "navigate") {
     e.respondWith(fetch(req).catch(() => caches.match("./index.html").then(r => r || caches.match("./"))));
     return;
