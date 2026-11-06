@@ -6,7 +6,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
-/* Layout: one narrow column, phone-first. Home = lecture list; quiz = one question per screen. */
 :root{
   --bg:#f1f3f7; --surface:#ffffff; --ink:#14182b; --muted:#5d6580; --line:#d8dce8;
   --accent:#d9480f; --accent-ink:#ffffff; --accent-soft:#fdeadf;
@@ -32,7 +31,6 @@ h1{font-size:1.5rem;line-height:1.3;margin:0 0 4px;text-wrap:balance}
 .en{direction:ltr;text-align:left;font-family:var(--en)}
 .num{font-family:var(--num);font-variant-numeric:tabular-nums}
 
-/* home */
 .opts{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
 .opts label{display:flex;align-items:center;gap:10px;cursor:pointer;min-width:0}
 .opts input{width:20px;height:20px;accent-color:var(--accent)}
@@ -46,7 +44,6 @@ h1{font-size:1.5rem;line-height:1.3;margin:0 0 4px;text-wrap:balance}
 .lec .best{font-family:var(--num);font-size:.85rem;color:var(--muted);text-align:center;white-space:nowrap}
 .lec .best.has{color:var(--ok);font-weight:600}
 
-/* quiz */
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
 .back{background:none;border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--muted)}
 .back:hover{border-color:var(--accent);color:var(--ink)}
@@ -77,7 +74,6 @@ details p{margin:6px 0 0;direction:ltr;text-align:left;font-family:var(--en)}
 .row{display:flex;flex-wrap:wrap;gap:10px}
 .row .btn{flex:1 1 150px}
 
-/* result */
 .score{text-align:center;font-family:var(--num);font-weight:600;font-size:3rem;line-height:1.2;margin:6px 0 0}
 .pct{text-align:center;color:var(--muted);margin:0 0 10px}
 .rev{list-style:none;margin:10px 0 0;padding:0}
